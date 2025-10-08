@@ -36,6 +36,9 @@ jobs:
       - name: Build site
         run: npm run build
 
+      - name: Add fallback
+        run: cp build/client/index.html build/client/404.html
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
