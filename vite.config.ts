@@ -5,6 +5,6 @@ import tsconfigPaths from "vite-tsconfig-paths";
 import react from "@vitejs/plugin-react";
 
 export default defineConfig({
-  base: "/mp2/",
+  //base: "/mp2/",
   plugins: [react(), tailwindcss(), reactRouter(), tsconfigPaths()],
 });
