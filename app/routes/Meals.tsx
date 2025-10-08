@@ -9,7 +9,7 @@ function generateAlphabet() {
 }
 
 // ===== Loader =====
-export async function loader() {
+export async function clientLoader() {
     const meals: any[] = [];
     await Promise.all(
         generateAlphabet().map(async (letter) => {
