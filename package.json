@@ -2,7 +2,7 @@
   "name": "sajib-recipes",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://sajibzaman57.github.io/mp2",
+  "homepage": "https://sajibzaman57.github.io/mp2/",
   "type": "module",
   "scripts": {
     "build": "react-router build",
