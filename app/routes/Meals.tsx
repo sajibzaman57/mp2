@@ -30,12 +30,12 @@ export default function Meals({ loaderData: { meals } }: Route.ComponentProps) {
     const [order, setOrder] = useState<"asc" | "desc">("asc");
     const [filteredMeals, setFilteredMeals] = useState(meals);
 
-    // Save globally for detail navigation
+
     useEffect(() => {
         setMeals(meals);
     }, [meals, setMeals]);
 
-    // Filter and sort logic
+
     useEffect(() => {
         let updated = meals.filter((meal: any) =>
             meal.strMeal.toLowerCase().includes(search.toLowerCase())
