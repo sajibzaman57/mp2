@@ -6,5 +6,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   base: "/mp2/",
-  plugins: [tailwindcss(), reactRouter(), tsconfigPaths(), react()],
+  plugins: [react(), tailwindcss(), reactRouter(), tsconfigPaths()],
 });
