@@ -1,15 +1,17 @@
 import {
   isRouteErrorResponse,
   Links,
+  Link,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
 } from "react-router";
 
+import { NavLink } from "react-router";
 import type { Route } from "./+types/root";
+import { MealProvider } from "./state/MealContext";
 import "./app.css";
-
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   {
@@ -42,7 +44,31 @@ export function Layout({ children }: { children: React.ReactNode }) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <MealProvider>
+      <nav className="navbar">
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "nav-link active" : "nav-link"
+          }
+        >
+          List View
+        </NavLink>
+
+        <NavLink
+          to="/gallery"
+          className={({ isActive }) =>
+            isActive ? "nav-link active" : "nav-link"
+          }
+        >
+          Gallery View
+        </NavLink>
+      </nav>
+
+      <Outlet />
+    </MealProvider>
+  );
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
